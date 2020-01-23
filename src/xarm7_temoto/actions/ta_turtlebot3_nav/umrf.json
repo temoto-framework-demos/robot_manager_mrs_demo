@@ -1,0 +1,13 @@
+{
+    "name": "TaTurtlebot3Nav",
+    "package_name": "ta_turtlebot3_nav",
+    "effect": "asynchronous",
+    "input_parameters": {
+        "input_1": {
+            "pvf_type": "number"
+        },
+        "input_0": {
+            "pvf_type": "number"
+        }
+    }
+}

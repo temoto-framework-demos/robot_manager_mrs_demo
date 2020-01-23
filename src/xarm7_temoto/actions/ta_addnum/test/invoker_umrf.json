@@ -1,0 +1,22 @@
+{
+    "name": "TaAddnum",
+    "package_name": "ta_addnum",
+    "suffix": "0",
+    "notation": "",
+    "effect": "synchronous",
+    "input_parameters": {
+        "input_1": {
+            "pvf_type": "number",
+            "pvf_value": 5.0
+        },
+        "input_2": {
+            "pvf_type": "number",
+            "pvf_value": 7.0
+        }
+    },
+    "output_parameters": {
+        "output_1": {
+            "pvf_type": "number"
+        }
+    }
+}
