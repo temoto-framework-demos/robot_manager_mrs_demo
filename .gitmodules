@@ -1,0 +1,9 @@
+[submodule "src/temoto"]
+	path = src/temoto
+	url = https://github.com/temoto-telerobotics/temoto
+[submodule "src/temoto_robot_manager"]
+	path = src/temoto_robot_manager
+	url = https://github.com/temoto-telerobotics/temoto_robot_manager
+[submodule "src/temoto_context_manager"]
+	path = src/temoto_context_manager
+	url = https://github.com/temoto-telerobotics/temoto_context_manager
