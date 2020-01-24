@@ -68,7 +68,6 @@ void executeTemotoAction()
   // target_pose1.pose.position.x = 0.25;
   // target_pose1.pose.position.y = 0.48;
   // target_pose1.pose.position.z = 0.5;
-
   
   // rmi_.plan(target_pose1,"panda_arm");  
 
@@ -77,15 +76,15 @@ void executeTemotoAction()
 
 
   // =================== Similar to test_pose ===================
-  target_pose1.pose.position.x = 0.00019109;
-  target_pose1.pose.position.y = 0.31125;
-  target_pose1.pose.position.z = 0.50067;
-  target_pose1.pose.orientation.x = 0.70691;
-  target_pose1.pose.orientation.y = 0.70644;
-  target_pose1.pose.orientation.z = -0.024783;
-  target_pose1.pose.orientation.w = 0.024728;
-  rmi_.plan(target_pose1,"xarm7");  
-  rmi_.execute();
+  // target_pose1.pose.position.x = 0.00019109;
+  // target_pose1.pose.position.y = 0.31125;
+  // target_pose1.pose.position.z = 0.50067;
+  // target_pose1.pose.orientation.x = 0.70691;
+  // target_pose1.pose.orientation.y = 0.70644;
+  // target_pose1.pose.orientation.z = -0.024783;
+  // target_pose1.pose.orientation.w = 0.024728;
+  // rmi_.plan(target_pose1,"xarm7");  
+  // rmi_.execute();
   // ============================================================
 
   
