@@ -16,3 +16,14 @@
 [submodule "src/panda_moveit_config"]
 	path = src/panda_moveit_config
 	url = https://github.com/ros-planning/panda_moveit_config
+[submodule "src/Universal_Robots_ROS_Driver"]
+	path = src/Universal_Robots_ROS_Driver
+	url = https://github.com/ut-ims-robotics-sandbox/Universal_Robots_ROS_Driver.git
+[submodule "src/src/fmauch_universal_robot"]
+	path = src/src/fmauch_universal_robot
+	url = https://github.com/fmauch/universal_robot.git
+	branch = calibration_devel
+[submodule "src/fmauch_universal_robot"]
+	path = src/fmauch_universal_robot
+	url = https://github.com/fmauch/universal_robot.git
+	branch = calibration_devel

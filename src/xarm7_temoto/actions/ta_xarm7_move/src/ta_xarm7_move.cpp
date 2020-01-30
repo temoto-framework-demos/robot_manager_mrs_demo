@@ -65,14 +65,24 @@ void executeTemotoAction()
   
 
   // Close coordinate near initial position
-  // target_pose1.pose.position.x = 0.25;
-  // target_pose1.pose.position.y = 0.48;
-  // target_pose1.pose.position.z = 0.5;
+  
+  target_pose1.pose.position.x = 0.20;
+  target_pose1.pose.position.y = -0.15;
+  target_pose1.pose.position.z = 0.25;
   
   // rmi_.plan(target_pose1,"panda_arm");  
 
-  //rmi_.plan(target_pose1,"xarm7");  
-  //rmi_.execute();
+  rmi_.plan(target_pose1,"xarm7");  
+  rmi_.execute();
+
+  target_pose1.pose.position.x = 0.20;
+  target_pose1.pose.position.y = 0.15;
+  target_pose1.pose.position.z = 0.25;
+  
+  // rmi_.plan(target_pose1,"panda_arm");  
+
+  rmi_.plan(target_pose1,"xarm7");  
+  rmi_.execute();
 
 
   // =================== Similar to test_pose ===================

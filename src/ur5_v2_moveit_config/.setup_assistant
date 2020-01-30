@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ur_description_robots
+    relative_path: urdf/ur5_with_base.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/ur5_robot_with_base.srdf
+  CONFIG:
+    author_name: Fabian Parra
+    author_email: parbian_11@hotmail.com
+    generated_timestamp: 1580399454
