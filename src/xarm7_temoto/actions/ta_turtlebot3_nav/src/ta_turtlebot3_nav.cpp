@@ -60,7 +60,7 @@ void executeTemotoAction()
   target_poseNav.pose.position.x = input_0;
   target_poseNav.pose.position.y = input_1;
 
-  rmi_.goalNav("map",target_poseNav); 
+  rmi_.navigationGoal("map",target_poseNav); 
 
   TEMOTO_INFO_STREAM("=====End Action ======"); 
 
