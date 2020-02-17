@@ -55,8 +55,8 @@ void executeTemotoAction()
   target_pose1.pose = rmi_.getEndEffPose("base_link","tool0");
 
   target_pose1.pose.position.x = 0.23;
-  target_pose1.pose.position.y = 0.66;
-  target_pose1.pose.position.z = 0.83;
+  target_pose1.pose.position.y = 0.56;
+  target_pose1.pose.position.z = 0.55; 
 
   rmi_.plan(target_pose1,"manipulator");  
   rmi_.execute();
