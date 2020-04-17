@@ -10,4 +10,6 @@
 [submodule "src/Universal_Robots_ROS_Driver"]
 	path = src/Universal_Robots_ROS_Driver
 	url = https://github.com/ut-ims-robotics-sandbox/Universal_Robots_ROS_Driver.git
-
+[submodule "src/xarm_ros"]
+	path = src/xarm_ros
+	url = https://github.com/xArm-Developer/xarm_ros.git
