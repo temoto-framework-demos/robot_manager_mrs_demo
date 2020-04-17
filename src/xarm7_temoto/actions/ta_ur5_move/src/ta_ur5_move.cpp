@@ -32,7 +32,7 @@ class TaUr5Move : public TemotoAction
 public:
 
 robot_manager::RobotManagerInterface<TaUr5Move> rmi_;
-const std::string robot_name_ = "ur5_robot";
+const std::string robot_name_ = "ur5_robot_sim";
 
 
 // Constructor. REQUIRED BY TEMOTO
@@ -52,16 +52,18 @@ void executeTemotoAction()
   
   geometry_msgs::PoseStamped target_pose1;
   
-  target_pose1.pose = rmi_.getEndEffPose("base_link","tool0");
+  target_pose1.pose = rmi_.getEndEffPose(robot_name_);
 
   target_pose1.pose.position.x = 0.23;
-  target_pose1.pose.position.y = 0.56;
-  target_pose1.pose.position.z = 0.55; 
+  target_pose1.pose.position.y = 0.66;
+  target_pose1.pose.position.z = 0.83;
 
-  rmi_.plan(target_pose1,"manipulator");  
+  rmi_.planManipulation(robot_name_,"manipulator",target_pose1);  
   rmi_.execute();
 
-  TEMOTO_INFO_STREAM(rmi_.getEndEffPose("base_link","tool0"));  
+  rmi_.controlGripperPosition(robot_name_,50);
+
+  TEMOTO_INFO_STREAM(rmi_.getEndEffPose(robot_name_));  
   TEMOTO_INFO_STREAM("=====End Action ======"); 
   
 }

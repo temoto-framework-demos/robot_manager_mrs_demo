@@ -60,16 +60,16 @@ void executeTemotoAction()
   target_poseNav.pose.position.x = input_0;
   target_poseNav.pose.position.y = input_1;
 
-  rmi_.navigationGoal("map",target_poseNav); 
+  rmi_.navigationGoal(robot_name_,"map",target_poseNav); 
 
   TEMOTO_INFO_STREAM("=====End Action ======"); 
 
 
-  // rmi_.plan("xarm7");
+  // rmi_.planManipulation(robot_name_,"xarm7");
   // geometry_msgs::PoseStamped target_pose1;  
   // target_pose1.pose.position.y -= 0.3;
   // target_pose1.pose.position.z -= 0.2;
-  // rmi_.plan(target_pose1,"xarm7");  
+  // rmi_.planManipulation(robot_name_,,"xarm7",target_pose1);  
   // rmi_.execute();
   // TEMOTO_INFO_STREAM(rmi_.getEndEffPose("base_link","tool0"));
 

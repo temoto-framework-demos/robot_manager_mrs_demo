@@ -48,83 +48,62 @@ TaXarm7Move()
 
 // REQUIRED BY TEMOTO
 void executeTemotoAction()
-{ 
+{
+ 
 
   rmi_.initialize(this);
   TEMOTO_INFO_STREAM("loading " << robot_name_);
   rmi_.loadRobot(robot_name_);
   TEMOTO_INFO_STREAM(robot_name_ << " initialized");
   
-  // rmi_.plan("xarm7");
-  //rmi_.plan("panda_arm");
+  // rmi_.planManipulation(robot_name_,"xarm7");
+  //rmi_.planManipulation(robot_name_,"panda_arm");
 
   geometry_msgs::PoseStamped target_pose1;
   
-  target_pose1.pose = rmi_.getEndEffPose("base_link","tool0");
+  target_pose1.pose = rmi_.getEndEffPose(robot_name_);
   
 
   // Close coordinate near initial position
-  // //================ WITHOUT BASE - WITHOUT GRIPPER ======================
-  // for (int i=0; i<3;i++){
-  //   target_pose1.pose.position.x = 0.20;
-  //   target_pose1.pose.position.y = -0.15;move_group-1
-  //   target_pose1.pose.position.z = 0.25;
-    
-  //   // rmi_.plan(target_pose1,"panda_arm");  
+  
+  target_pose1.pose.position.x = 0.20;
+  target_pose1.pose.position.y = -0.15;
+  target_pose1.pose.position.z = 0.25;
+  
+  // rmi_.planManipulation(robot_name_,"panda_arm",target_pose1);  
 
-  //   rmi_.plan(target_pose1,"xarm7");  
-  //   rmi_.execute();
+  rmi_.planManipulation(robot_name_,"xarm7",target_pose1);  
+  rmi_.execute();
 
-  //   target_pose1.pose.position.x = 0.20;
-  //   target_pose1.pose.position.y = 0.15;
-  //   target_pose1.pose.position.z = 0.25;
-    
-  //   // rmi_.plan(target_pose1,"panda_arm");  
+  target_pose1.pose.position.x = 0.20;
+  target_pose1.pose.position.y = 0.15;
+  target_pose1.pose.position.z = 0.25;
+  
+  // rmi_.planManipulation(robot_name_,"panda_arm");  
 
-  //   rmi_.plan(target_pose1,"xarm7");  
-  //   rmi_.execute();
-  // }
-  // //=====================================
+  rmi_.planManipulation(robot_name_,"xarm7");  
+  rmi_.execute();
+
+
+  // =================== Similar to test_pose ===================
+  // target_pose1.pose.position.x = 0.00019109;
+  // target_pose1.pose.position.y = 0.31125;
+  // target_pose1.pose.position.z = 0.50067;
+  // target_pose1.pose.orientation.x = 0.70691;
+  // target_pose1.pose.orientation.y = 0.70644;
+  // target_pose1.pose.orientation.z = -0.024783;
+  // target_pose1.pose.orientation.w = 0.024728;
+  // rmi_.planManipulation(robot_name_,"xarm7");  
+  // rmi_.execute();
+  // ============================================================
 
   
-  // =================== Similar to test_pose ===================
-  // =================== triangle ===================
+  //TEMOTO_INFO_STREAM( "TARGET POSE " << target_pose1.pose.position.x);
+  //TEMOTO_INFO_STREAM( "GETMOVEITRVIZCONF" << rmi_.getMoveitRvizConfig());
+  //rmi_.planManipulation(robot_name_,"xarm7");  
+  //rmi_.getEndEffPose(robot_name_);
 
-  /*target_pose1.pose.position.x= 0.000342619;
-  target_pose1.pose.position.y= 0.311218;
-  target_pose1.pose.position.z= 0.500637;
-  // target_pose1.pose.orientation.x= 0.706598;
-  // target_pose1.pose.orientation.y= 0.706749;
-  // target_pose1.pose.orientation.z= -0.0247646;
-  // target_pose1.pose.orientation.w= 0.0247535;
-  rmi_.plan(target_pose1,"xarm7");  
-  rmi_.execute();
-
-  target_pose1.pose.position.x= 0.18276;
-  target_pose1.pose.position.y= 0.32375;
-  target_pose1.pose.position.z= 0.68065;  
-  rmi_.plan(target_pose1,"xarm7");  
-  rmi_.execute();
-
-  target_pose1.pose.position.x= -0.22708;
-  target_pose1.pose.position.y= 0.32407;
-  target_pose1.pose.position.z= 0.68047;  
-  rmi_.plan(target_pose1,"xarm7");  
-  rmi_.execute();
-
-  target_pose1.pose.position.x= 0.000342619;
-  target_pose1.pose.position.y= 0.311218;
-  target_pose1.pose.position.z= 0.500637;
-  // target_pose1.pose.orientation.x= 0.706598;
-  // target_pose1.pose.orientation.y= 0.706749;
-  // target_pose1.pose.orientation.z= -0.0247646;
-  // target_pose1.pose.orientation.w= 0.0247535;
-  rmi_.plan(target_pose1,"xarm7");  
-  rmi_.execute();*/
- 
-
-
-  TEMOTO_INFO_STREAM(rmi_.getEndEffPose("base_link","tool0"));  
+  TEMOTO_INFO_STREAM(rmi_.getEndEffPose(robot_name_));  
   TEMOTO_INFO_STREAM("=====End Action ======"); 
   
 }

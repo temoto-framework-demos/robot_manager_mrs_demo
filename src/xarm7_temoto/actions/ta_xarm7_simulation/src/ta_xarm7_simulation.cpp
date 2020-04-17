@@ -52,7 +52,7 @@ void executeTemotoAction()
   
   geometry_msgs::PoseStamped target_pose1;
   
-  target_pose1.pose = rmi_.getEndEffPose("base_link","tool0");
+  target_pose1.pose = rmi_.getEndEffPose(robot_name_);
  
   // =================== Similar to test_pose ===================
   target_pose1.pose.position.x = 0.00019109;
@@ -62,11 +62,14 @@ void executeTemotoAction()
   target_pose1.pose.orientation.y = 0.70644;
   target_pose1.pose.orientation.z = -0.024783;
   target_pose1.pose.orientation.w = 0.024728;
-  rmi_.plan(target_pose1,"xarm7");  
+  rmi_.planManipulation(robot_name_,"xarm7",target_pose1);  
   rmi_.execute();
   // ============================================================
 
-  TEMOTO_INFO_STREAM(rmi_.getEndEffPose("base_link","tool0"));  
+
+  rmi_.controlGripperPosition(robot_name_,50);
+
+  TEMOTO_INFO_STREAM(rmi_.getEndEffPose(robot_name_));  
   TEMOTO_INFO_STREAM("=====End Action ======"); 
 
 }
