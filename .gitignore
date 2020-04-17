@@ -6,7 +6,6 @@ lib/
 .catkin_tools/
 .catkin_workspace
 src/CMakeLists.txt
-src/mir_robot
 *.so
 *.swp
 *.user
