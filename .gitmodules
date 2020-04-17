@@ -13,3 +13,7 @@
 [submodule "src/xarm_ros"]
 	path = src/xarm_ros
 	url = https://github.com/xArm-Developer/xarm_ros.git
+[submodule "src/fmauch_universal_robot"]
+	path = src/fmauch_universal_robot
+	url = https://github.com/fmauch/universal_robot.git
+	branch = calibration_devel
