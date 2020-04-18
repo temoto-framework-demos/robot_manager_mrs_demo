@@ -36,18 +36,19 @@ Robots:
     executable: "urdf/xarm7_with_gripper.xacro"
   manipulation:
     controller:
-      # Este si sirve
       package_name: "xarm7_wgrip_moveit" 
       executable: "move_group.launch"
       args: "fake_execution:=true load_robot_description:=false allow_trajectory_execution:=true"
-
       planning_groups: ["xarm7"]
-
     driver:
-      # Este si sirve
       package_name: "xarm7_wgrip_moveit"
-      executable: "demo_test2.launch"
+      executable: "demo_test.launch"
       args: "load_move_group:=false"
-
-      # package_name: "xarm7_moveit_config"
-      # executable: "demo.launch"
+  gripper:
+    controller:
+      package_name: "temoto_gripper_converter"
+      executable: "xarmgripper_temoto_controller.launch"      
+    driver:      
+      package_name: "kinova_bringup" 
+      executable: "kinova_robot.launch"
+      args: "kinova_robotType:=m1n6s300"
