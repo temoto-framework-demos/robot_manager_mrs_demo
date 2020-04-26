@@ -1,0 +1,20 @@
+std::string action_address = kinova_robotType + "driver/fingers_action/finger_positions";
+//client = actionlib::SimpleActionClient(action_address,
+//                                       kinova_msgs.msg.SetFingersPositionAction);
+
+actionlib::SimpleActionClient<kinova_msgs::SetFingersPositionAction> client;
+kinova_msgs::SetFingersPositionAction goal;
+client.wait_for_server();
+goal.fingers.finger1 = float(req.position);
+goal.fingers.finger2 = float(req.position);
+goal.fingers.finger3 = float(req.position);
+
+client.send_goal(goal);
+if (client.wait_for_result(rospy.Duration(5.0)))
+{
+        return client.get_result();
+}
+else{
+        client.cancel_all_goals();
+}
+
