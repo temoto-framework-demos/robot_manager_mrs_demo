@@ -14,6 +14,8 @@ find_package(catkin REQUIRED COMPONENTS
   kinova_msgs
   actionlib
   temoto_robot_manager
+  xarm_msgs
+  xarm_api
 )
 
 ## System dependencies are found with CMake's conventions
@@ -205,6 +207,15 @@ include_directories(
 # catkin_add_nosetests(test)
 
 
-add_executable(gripper_wrapper src/gripper_wrapper.cpp)
-target_link_libraries(gripper_wrapper ${catkin_LIBRARIES})
+add_executable(kinova_gripper_wrapper src/kinova_gripper_wrapper.cpp)
+target_link_libraries(kinova_gripper_wrapper ${catkin_LIBRARIES})
+
+add_executable(xArm_gripper_wrapper src/xArm_gripper_wrapper.cpp)
+target_link_libraries(xArm_gripper_wrapper ${catkin_LIBRARIES})
+
+add_executable(xArm_gripper_controller src/xArm_gripper_controller.cpp)
+target_link_libraries(xArm_gripper_controller ${catkin_LIBRARIES})
+
+add_executable(xArm_gripper_driver src/xArm_gripper_driver.cpp)
+target_link_libraries(xArm_gripper_driver ${catkin_LIBRARIES})
 

@@ -5,13 +5,13 @@
 #include <kinova_msgs/SetFingersPositionAction.h>
 
 
-std::string kinova_robotType = "mtn6s300_";
+std::string kinova_robotType = "m1n6s300_";
 
 
 bool gripperCb (temoto_robot_manager::GripperControl::Request& req, 
 		temoto_robot_manager::GripperControl::Response& res)
 {
-	ROS_INFO("request: x=%ld", (long int)req.position);
+	ROS_INFO("Kinova gripper request: x=%ld", (long int)req.position);
 	req.position;
 	return true;
 }
@@ -19,7 +19,7 @@ bool gripperCb (temoto_robot_manager::GripperControl::Request& req,
 
 int main(int argc, char **argv)
 {
-ros::init(argc, argv, "gripper_wrapper");
+ros::init(argc, argv, "kinova_gripper_wrapper");
 ros::NodeHandle nh;
 
 ros::ServiceServer gripper_server = nh.advertiseService("gripper_control", gripperCb);

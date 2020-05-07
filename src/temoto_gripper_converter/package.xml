@@ -59,11 +59,15 @@
   <build_export_depend>std_msgs</build_export_depend>
   <build_export_depend>kinova_msgs</build_export_depend>
   <build_export_depend>temoto_robot_manager</build_export_depend>
+  <build_depend>xarm_msgs</build_depend>
+  <build_depend>xarm_api</build_depend>
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>kinova_msgs</exec_depend>
   <exec_depend>temoto_robot_manager</exec_depend>
+  <exec_depend>xarm_msgs</exec_depend>
+  <exec_depend>xarm_api</exec_depend>
 
 
 
