@@ -1,3 +1,0 @@
-<launch>
-  <node name="gripper_wrapper" pkg="temoto_gripper_converter" type="gripper_wrapper" output="screen" /> 
-</launch>

@@ -15,4 +15,4 @@ controller_list:
 
 initial:
       - group: xarm7
-        pose:  home_pose
+        pose:  test_pose

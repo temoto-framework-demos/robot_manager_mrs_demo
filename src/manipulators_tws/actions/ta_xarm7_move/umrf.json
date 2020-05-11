@@ -1,0 +1,5 @@
+{
+    "name": "TaXarm7Move",
+    "package_name": "ta_xarm7_move",
+    "effect": "asynchronous"
+}

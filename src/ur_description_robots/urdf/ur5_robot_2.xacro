@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="ur5"> 
+<xacro:arg name="prefix" default=""/>
+  <xacro:arg name="ros_namespace" default="ur5"/>
+  <xacro:arg name="limited" default="false"/>
+  <xacro:arg name="effort_control" default="false"/>
+  <!--xacro:include filename="$(find ur_description)/urdf/ur5_robot.urdf.xacro" /-->
+  <xacro:include filename="$(find ur_description_robots)/urdf/ur5_with_base.xacro" />
+  <xacro:include filename="$(find ur_description_robots)/urdf/kinova_gripper.xacro" />
+ <xacro:kinova base_parent="ee_link" prefix="" />
+
+  <!-- <joint name="kinova_to_ur" type="fixed">
+    <parent link="ee_link" />
+    <child link = "kinova_link_6" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint> -->
+</robot>
+
