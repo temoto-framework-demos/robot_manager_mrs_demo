@@ -1,0 +1,22 @@
+Robots:
+- robot_name: "clearbot"
+  description: "clearbot"
+  reliability: 0.8
+  urdf:
+    package_name: "robotont_description"
+    executable: "xacro/main.urdf.xacro"
+  navigation:
+    controller:
+      # package_name: "simple_navigation_goals"
+      # executable: "temoto_nav.launch"
+      # global_planner: "navfn/NavfnROS"        #/move_base/DWAPlannerROS/global_plan
+      # local_planner: "base_local_planner/TrajectoryPlannerROS"         #/move_base/DWAPlannerROS/local_plan
+      
+      package_name: "simple_navigation_goals"
+      executable: "temoto_nav.launch"
+      global_planner: "navfn/NavfnROS"        #/move_base/DWAPlannerROS/global_plan
+      local_planner: "dwa_local_planner/DWAPlannerROS"
+                                              #dwa_local_planner/DWAPlannerROS
+    driver:
+      package_name: "robotont_driver" 
+      executable: "driver_temoto.launch"      
