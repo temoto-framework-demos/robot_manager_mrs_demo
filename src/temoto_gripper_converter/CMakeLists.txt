@@ -210,9 +210,6 @@ include_directories(
 add_executable(kinova_gripper_wrapper src/kinova_gripper_wrapper.cpp)
 target_link_libraries(kinova_gripper_wrapper ${catkin_LIBRARIES})
 
-add_executable(xArm_gripper_wrapper src/xArm_gripper_wrapper.cpp)
-target_link_libraries(xArm_gripper_wrapper ${catkin_LIBRARIES})
-
 add_executable(xArm_gripper_controller src/xArm_gripper_controller.cpp)
 target_link_libraries(xArm_gripper_controller ${catkin_LIBRARIES})
 

@@ -14,15 +14,18 @@ bool gripperCb (temoto_robot_manager::GripperControl::Request& req,
 
 	if (req.position<0)
 	{
-	req.position=0;	
+		req.position=0;	
 	}
 
+	else if (req.position>100)
+	{
+		req.position=100;	
+	}
+	
 	ROS_INFO("sending request");
 	xarm_msgs::GripperMove srv2;
-  	srv2.request.pulse_pos = req.position;
-  	//gripper_config_client_2.call(srv2);
-
-
+  	srv2.request.pulse_pos = (req.position * 850)/100;
+  	
 	if (gripper_config_client_2.call(srv2))
 	{
 		ROS_INFO("The gripper moved");
@@ -33,7 +36,6 @@ bool gripperCb (temoto_robot_manager::GripperControl::Request& req,
 		ROS_INFO("The server did not come up");
 		return true;
 	}
-
 	ROS_INFO("end");
 	//return true;
 }

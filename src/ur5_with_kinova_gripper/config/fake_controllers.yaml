@@ -6,11 +6,8 @@ controller_list:
       - elbow_joint
       - wrist_1_joint
       - wrist_2_joint
-<<<<<<< HEAD
       - wrist_3_joint
+
 initial:
       - group: manipulator
         pose:  home_pose
-=======
-      - wrist_3_joint
->>>>>>> 91619004e9f8ec102e51923f4b0f9822134978b3

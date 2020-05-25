@@ -60,5 +60,4 @@ Robots:
       package_name: "temoto_gripper_converter" 
       executable: "xarm_gripper_temoto_driver.launch"
       
-      
 

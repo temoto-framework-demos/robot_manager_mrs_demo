@@ -12,7 +12,7 @@ Robots:
       # args: "config:=true"    
       planning_groups: ["manipulator"]
     driver:
-      package_name: "ur_robot_driver"
+      package_name: "ur5_with_kinova_gripper"
       executable: "ur5_with_gripper_bringup.launch"
       args: "robot_ip:=192.168.1.100"
   gripper:
