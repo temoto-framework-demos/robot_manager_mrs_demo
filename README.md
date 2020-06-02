@@ -30,16 +30,24 @@ The xArm7 robot picks up an object located on top of a table, the clearbot navig
 
 ## How to run it
 
+Create a catkin workspace for each workstation 
+
 ``` bash
 # Opertor station:
+cd your_catkin_workspace/src
 git clone -b operator https://github.com/temoto-telerobotics-demos/robot_manager_mrs_demo.git
+cd your_catkin_workspace
+catkin build
 export ROS_IP='http://192.168.0.131'
 roslaunch operator_tws temoto.launch
 ```
 
 ``` bash
 # manipulator station:
+cd your_catkin_workspace/src
 git clone -b manipulators https://github.com/temoto-telerobotics-demos/robot_manager_mrs_demo.git
+cd your_catkin_workspace
+catkin build
 export ROS_MASTER_URI='http://192.168.0.131'
 export ROS_IP='http://192.168.0.173'
 roslaunch manipulators_tws temoto.launch
@@ -47,11 +55,15 @@ roslaunch manipulators_tws temoto.launch
 
 ``` bash
 # robotont station:
+cd your_catkin_workspace/src
 git clone -b robotont https://github.com/temoto-telerobotics-demos/robot_manager_mrs_demo.git
+cd your_catkin_workspace
+catkin build
 export ROS_MASTER_URI='http://192.168.0.131'
 export ROS_IP='http://192.168.0.102'
 roslaunch robotont_ws temoto.launch
 ```
+
 
 Once the three instances of TeMoto are running, it is necessary to trigger the action
 ``` bash
