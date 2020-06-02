@@ -33,7 +33,7 @@ The xArm7 robot picks up an object located on top of a table, the clearbot navig
 Create a catkin workspace for each workstation 
 
 ``` bash
-# Opertor station:
+# Opertor workstation:
 cd your_catkin_workspace/src
 git clone -b operator https://github.com/temoto-telerobotics-demos/robot_manager_mrs_demo.git
 cd your_catkin_workspace
@@ -43,7 +43,7 @@ roslaunch operator_tws temoto.launch
 ```
 
 ``` bash
-# manipulator station:
+# manipulator workstation:
 cd your_catkin_workspace/src
 git clone -b manipulators https://github.com/temoto-telerobotics-demos/robot_manager_mrs_demo.git
 cd your_catkin_workspace
@@ -54,7 +54,7 @@ roslaunch manipulators_tws temoto.launch
 ```
 
 ``` bash
-# robotont station:
+# robotont workstation:
 cd your_catkin_workspace/src
 git clone -b robotont https://github.com/temoto-telerobotics-demos/robot_manager_mrs_demo.git
 cd your_catkin_workspace
@@ -67,7 +67,7 @@ roslaunch robotont_ws temoto.launch
 
 Once the three instances of TeMoto are running, it is necessary to trigger the action
 ``` bash
-# Opertor station:
+# In another terminal of the opertor workstation:
 roslaunch ta_demo_1 action_test_separate.launch wake_workd:=operator_tws
 ```
 
