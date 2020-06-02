@@ -7,9 +7,9 @@ This repository contains the TeMoto Robot Manager package and a demo to show the
 * Clearbot
 * Kinova KG-3 gripper
 
-It is distribute on 4 branches as follow: 
+It is distribute on *4 branches* as follow: 
 
-## Master branch
+## master branch
 Contains a empty space with the necessary packages to start a new project using TeMoto Robot Manager (TRM)
 
 ## operator branch
@@ -27,8 +27,6 @@ This branch represent an instance of TeMoto running on the Clearbot robot. The r
 The demo consist of an heterogeneous multi-robot system controlled to transport an object from one point to another. 
 The xArm7 robot picks up an object located on top of a table, the clearbot navigates under the xArm robot, which puts the object on top of clearbot. Then Clearbot navigates towards the UR5 robot, and when it reaches the goal, the UR5 takes the object from the clearbot using the kinova gripper. 
 
-![Demo Architecture](/home/fabianparra/Pictures/TeMoto_arch_demo.png)
-Format: ![Alt Text](url)
 
 ## How to run it
 
@@ -36,18 +34,23 @@ Format: ![Alt Text](url)
 # Opertor station:
 git clone -b operator https://github.com/temoto-telerobotics-demos/robot_manager_mrs_demo.git
 roslaunch operator_tws temoto.launch
+export ROS_IP='http://192.168.0.131'
 ```
 
 ``` bash
 # manipulator station:
 git clone -b manipulators https://github.com/temoto-telerobotics-demos/robot_manager_mrs_demo.git
 roslaunch manipulators_tws temoto.launch
+export ROS_MASTER_URI='http://192.168.0.131'
+export ROS_IP='http://192.168.0.173'
 ```
 
 ``` bash
 # robotont station:
 git clone -b robotont https://github.com/temoto-telerobotics-demos/robot_manager_mrs_demo.git
 roslaunch robotont_ws temoto.launch
+export ROS_MASTER_URI='http://192.168.0.131'
+export ROS_IP='http://192.168.0.102'
 ```
 
 Once the three instances of TeMoto are running, it is necessary to trigger the action
