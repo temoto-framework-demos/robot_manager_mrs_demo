@@ -7,19 +7,19 @@ This repository contains the TeMoto Robot Manager package and a demo to show the
 * Clearbot
 * Kinova KG-3 gripper
 
-It is distribute on *4 branches* as follow: 
+This repository is distribute on *4 branches* as follow: 
 
-## master branch
+## 1. master branch
 Contains a empty space with the necessary packages to start a new project using TeMoto Robot Manager (TRM)
 
-## operator branch
+## 2. operator branch
 The operator branch contains the workspace intended for the user. It has an action with a series of instructions to execute the transportation task. 
 
-## manipulators branch
+## 3. manipulators branch
 The manipulator branck contains all of the packages required for manipulation and gripper purposes. The original repositories of xArm, UR5 and Kinova-ros were added as submodule. 
 The xarm7_wgrip_moveit and ur5_with_kinova_gripper have a robot_description.yaml file that contains the configuration for each arm, with the respective driver and controller executables. 
 
-## robotont branch
+## 4. robotont branch
 This branch represent an instance of TeMoto running on the Clearbot robot. The robot_description.yaml file contains the configuration of the navigation feature for the mobile base. 
 
 
