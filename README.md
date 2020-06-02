@@ -33,24 +33,24 @@ The xArm7 robot picks up an object located on top of a table, the clearbot navig
 ``` bash
 # Opertor station:
 git clone -b operator https://github.com/temoto-telerobotics-demos/robot_manager_mrs_demo.git
-roslaunch operator_tws temoto.launch
 export ROS_IP='http://192.168.0.131'
+roslaunch operator_tws temoto.launch
 ```
 
 ``` bash
 # manipulator station:
 git clone -b manipulators https://github.com/temoto-telerobotics-demos/robot_manager_mrs_demo.git
-roslaunch manipulators_tws temoto.launch
 export ROS_MASTER_URI='http://192.168.0.131'
 export ROS_IP='http://192.168.0.173'
+roslaunch manipulators_tws temoto.launch
 ```
 
 ``` bash
 # robotont station:
 git clone -b robotont https://github.com/temoto-telerobotics-demos/robot_manager_mrs_demo.git
-roslaunch robotont_ws temoto.launch
 export ROS_MASTER_URI='http://192.168.0.131'
 export ROS_IP='http://192.168.0.102'
+roslaunch robotont_ws temoto.launch
 ```
 
 Once the three instances of TeMoto are running, it is necessary to trigger the action
