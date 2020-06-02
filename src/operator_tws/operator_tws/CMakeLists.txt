@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(temoto_inst_1)
+project(operator_tws)
 
 # use c++11 standard
 add_compile_options(-std=c++11)

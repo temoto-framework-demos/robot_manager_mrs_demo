@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>temoto_inst_1</name>
+  <name>operator_tws</name>
   <version>0.0.0</version>
-  <description>The temoto_inst_1 package</description>
+  <description>The operator_tws package</description>
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->
   <!-- Authors do not have to be maintainers, but could be -->

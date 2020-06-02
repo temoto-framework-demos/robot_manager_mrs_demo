@@ -59,16 +59,12 @@ void executeTemotoAction()
   rmi_.loadRobot(robot_name_2);
   TEMOTO_INFO_STREAM(robot_name_2 << " initialized");
 
-  clearbot
+  // clearbot
   TEMOTO_INFO_STREAM("loading " << robot_name_3);
   rmi_.loadRobot(robot_name_3);
   TEMOTO_INFO_STREAM(robot_name_3 << " initialized");
 
-  TEMOTO_INFO_STREAM("================= Start Action ============= ");
-
-  // =============================================================
-  // xArm
-
+  
   geometry_msgs::PoseStamped target_pose1;  
   rmi_.planManipulation(robot_name_1,"xarm7","test_pose");
   rmi_.executePlan(robot_name_1);
@@ -98,23 +94,13 @@ void executeTemotoAction()
 
   rmi_.planManipulation(robot_name_1,"xarm7","test_pose");  
   rmi_.executePlan(robot_name_1);
-  TEMOTO_INFO_STREAM("================= End part1 ============= ");
-
-  // // =============================================================
-  // // clearbot
-
+  
   geometry_msgs::PoseStamped target_poseNav;
   target_poseNav.pose.position.x = 0;
   target_poseNav.pose.position.y = -0.8;
   target_poseNav.pose.orientation.z = 0;
   target_poseNav.pose.orientation.w = 1;
-  ros::Duration(3).sleep();
-
   rmi_.navigationGoal(robot_name_3,"map",target_poseNav);
-  TEMOTO_INFO_STREAM("================= End part2 ============= ");
-
-  // // =============================================================
-
 
   target_pose1.pose.position.x = 0.61288;
   target_pose1.pose.position.y = 0.042255;
@@ -139,20 +125,13 @@ void executeTemotoAction()
   rmi_.planManipulation(robot_name_1,"xarm7","test_pose");  
   rmi_.executePlan(robot_name_1);
 
-  TEMOTO_INFO_STREAM("================= End part3 ============= ");
-
-  // // =============================================================
-  // // clearbot
   target_poseNav.pose.position.x = -0.38;
   target_poseNav.pose.position.y = 0.85;  
   target_poseNav.pose.orientation.z = 0.7071068;
   target_poseNav.pose.orientation.w = 0.7071068;
 
   rmi_.navigationGoal(robot_name_3,"map",target_poseNav);
-  TEMOTO_INFO_STREAM("================= End part4 ============= ");
-
-  // // =============================================================
-  // // UR5
+  
   rmi_.planManipulation(robot_name_2,"manipulator","home_pose");
   rmi_.executePlan(robot_name_2);
   
@@ -161,7 +140,6 @@ void executeTemotoAction()
   geometry_msgs::PoseStamped target_pose2;  
   target_pose2.pose = rmi_.getEndEffPose(robot_name_2); 
 
-  //object
   target_pose2.pose.position.x = 0.61131;
   target_pose2.pose.position.y = 0.12649;
   target_pose2.pose.position.z = 0.32;   
@@ -170,17 +148,14 @@ void executeTemotoAction()
 
   rmi_.controlGripperPosition(robot_name_2,40);   //close
   
-  // UP
   target_pose2.pose.position.x = 0.61131;
   target_pose2.pose.position.y = 0.12649;
   target_pose2.pose.position.z = 0.60;
   rmi_.planManipulation(robot_name_2,"manipulator",target_pose2);
   rmi_.executePlan(robot_name_2);
 
-  TEMOTO_INFO_STREAM("================= End part5 ============= ");
   TEMOTO_INFO_STREAM(rmi_.getEndEffPose(robot_name_1)); 
-  TEMOTO_INFO_STREAM(rmi_.getEndEffPose(robot_name_2));
-  TEMOTO_INFO_STREAM("================= End Action ============= ");
+  TEMOTO_INFO_STREAM(rmi_.getEndEffPose(robot_name_2));  
 }
 
 // Destructor
