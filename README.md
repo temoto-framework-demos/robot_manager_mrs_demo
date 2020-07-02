@@ -1,6 +1,6 @@
 # Robot Manager Demo
 
-This repository contains the source materials for reproducing the [multi-robot object transportation demo](), which demonstrates the enabling features of TeMoto Robot Manager.
+This repository contains the source materials for reproducing the [multi-robot object transportation demo](https://youtu.be/BW8uhWVDYA8), which demonstrates the enabling features of TeMoto Robot Manager.
 
 The demo consist of an heterogeneous multi-robot system that is tasked to transport an object from one point to another. The robots involved in this demo are:
 * *xArm7* manipulator with *xArm* two finger gripper
